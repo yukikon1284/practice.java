@@ -2,7 +2,7 @@ package Items;
 public class Items{
 	private static ItemsOrigin[] ItemsOrigin;
 	private static String[][] itemsN = 
-		{{"片手剣","魔法剣","双剣","刀","大剣","ランス","杖","魔道銃"}
+		{{"片手剣","魔法剣","双剣","刀","大剣","槍","杖","魔道銃"}
 		,{"中","軽","重","魔"}
 		,{"攻撃","回復","状態異常回復","その他"}//アイテム
 		,{"攻撃","回復","状態異常攻撃","状態異常回復"}//魔法
