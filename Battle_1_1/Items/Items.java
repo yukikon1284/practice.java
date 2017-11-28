@@ -2,11 +2,11 @@ package Items;
 public class Items{
 	private static ItemsOrigin[] ItemsOrigin;
 	private static String[][] itemsN = 
-		{{"剣","杖","槍","銃","立て"}
-		,{"軽","中","重"}
-		,{"攻撃","回復","以上"}
-		,{"１攻撃","２回復","３以上"}
-		,{"能力","体制","そのた"}};
+		{{"片手剣","魔法剣","双剣","刀","大剣","ランス","杖","魔道銃"}
+		,{"中","軽","重","魔"}
+		,{"攻撃","回復","状態異常回復","その他"}//アイテム
+		,{"攻撃","回復","状態異常攻撃","状態異常回復"}//魔法
+		,{"能力","状態異常耐性","その他"}};//装飾品
 	public static void items(){
 		ItemsOrigin = new ItemsOrigin[] {new WoodSword(), new IronSword()};
 		System.out.println(ItemsOrigin[1].getName());
