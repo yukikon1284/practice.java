@@ -11,11 +11,6 @@ public class Items{
 		ItemsOrigin = new ItemsOrigin[] {new WoodSword(), new IronSword()};
 		System.out.println(ItemsOrigin[1].getName());
 		System.out.println(ItemsOrigin[0].getName());
-
-		for (int i=0; i<ItemsOrigin.length; i++) {
-			int[] type = ItemsOrigin[i].getType();
-			System.out.println(itemsN[type[0]][type[1]]);
-		}
 		designationType(0);
 	}
 	public static void designationType(final int place){
