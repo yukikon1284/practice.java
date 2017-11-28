@@ -13,16 +13,22 @@ public class ItemsOrigin{
 		this.money = money;
 		this.description = description;
 	}
-	String getName(){
+	protected String getName(){
 		return this.name;
 	}
-	int[] getType(){
+	protected int[] getType(){
 		return this.type;
 	}
-	int getType(int place){
+	protected int getType(int place){
 		return this.type[place];
 	}
-	int[] getAddAbility(){
+	protected int[] getAddAbility(){
 		return this.addAbility;
+	}
+	protected int getMoney(){
+		return this.money;
+	}
+	protected String getDescription(){
+		return this.description;
 	}
 }
