@@ -6,12 +6,8 @@ interface Case{
 	static int YN(){
 		int answer = 0;
 		String[] YN = {"はい","いいえ"};
-		try{
 			for (int i=0; i<YN.length; i++) pl(number(i)+YN[i]);
 			answer = scanI(2);
-		}catch(java.util.InputMismatchException e){
-			pl(e+"");
-		}
 		return answer;
 	}
 	static void time(int time){
@@ -23,13 +19,11 @@ interface Case{
 	}
 	static String scanS(){
 		p(direction());
-		String scanS = new Scanner(System.in).nextLine();
-		return scanS;
+		return new Scanner(System.in).nextLine();
 	}
 	static int scanI() throws java.util.InputMismatchException{
 		p(direction());
-		int scanI = new Scanner(System.in).nextInt();
-		return scanI;
+		return new Scanner(System.in).nextInt();
 	}
 	static int scanI(int limit) throws java.util.InputMismatchException{
 		int answer = scanI();
@@ -37,12 +31,10 @@ interface Case{
 		return answer;
 	}
 	static int random(int number){
-		int random = new Random().nextInt(number);
-		return random;
+		return new Random().nextInt(number);
 	}
 	static String correct(){
-		String correct = "対応した数字を入れてください。";
-		return correct;
+		return "対応した数字を入れてください。";
 	}
 	static void seyCorrect(){
 		pl(correct());
@@ -51,19 +43,18 @@ interface Case{
 		return direction()+(i+1)+" ";
 	}
 	static String direction(){
-		String direction = " >";
-		return direction;
+		return " >";
 	}
 	static String back(){
-		String back = "戻る";
-		return back;
+		return "戻る";
 	}
-	static void pl(String str){
-		System.out.println(str);
+	static void pl(Object obj){
+		System.out.println(obj);
 	}
-	static void p(String str){
-		System.out.print(str);
+	static void p(Object obj){
+		System.out.print(obj);
 	}
+	//初期化設定　(配列数, 初期数値)
 	static int[] setIntArr(int number, int setNumber){
 		int[] IntArr = new int[number];
 		Arrays.fill(IntArr, setNumber);

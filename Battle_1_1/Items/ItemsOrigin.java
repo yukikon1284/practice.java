@@ -3,6 +3,7 @@ public class ItemsOrigin{
 	private String name;
 	private int[] type;
 	private int[] addAbility;
+	
 	ItemsOrigin(final String name, final int[] type, final int[] addAbility){
 		this.name = name;
 		this.type = type;
