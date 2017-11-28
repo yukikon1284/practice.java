@@ -3,13 +3,13 @@ import Items.Sword.*;
 public class Items{
 	private static ItemsOrigin[] ItemsOrigin;
 	private static String[][] itemsN = 
-		{{"片手剣","魔法剣","双剣","刀","大剣","槍","杖","魔道銃"}
-		,{"中","軽","重","魔"}
+		{{"片手剣","魔法剣","双剣","刀","大剣","槍","杖","魔道銃"}//武器
+		,{"中","軽","重","魔"}//防具
 		,{"攻撃","回復","状態異常回復","その他"}//アイテム
 		,{"攻撃","回復","状態異常攻撃","状態異常回復"}//魔法
 		,{"能力","状態異常耐性","その他"}};//装飾品
 	public static void items(){
-		ItemsOrigin = new ItemsOrigin[] {new WoodSword(), new IronSword()};
+		ItemsOrigin = new ItemsOrigin[] {new WoodSword(), new IronSword(), new BronzeSword()};
 		System.out.println(ItemsOrigin[1].getName());
 		System.out.println(ItemsOrigin[0].getName());
 		designationType(0);
