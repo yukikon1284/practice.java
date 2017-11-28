@@ -1,5 +1,6 @@
 package Items;
 import Items.Sword.*;
+import Items.MagicSword.*;
 public class Items{
 	private static ItemsOrigin[] ItemsOrigin;
 	private static String[][] itemsN = 
@@ -9,9 +10,10 @@ public class Items{
 		,{"攻撃","回復","状態異常攻撃","状態異常回復"}//魔法
 		,{"能力","状態異常耐性","その他"}};//装飾品
 	public static void items(){
-		ItemsOrigin = new ItemsOrigin[] {new WoodSword(), new IronSword(), new BronzeSword()};
+		ItemsOrigin = new ItemsOrigin[] {new WoodSword(), new IronSword(), new BronzeSword(), new MagicalIronSword()};
 		System.out.println(ItemsOrigin[1].getName());
 		System.out.println(ItemsOrigin[0].getName());
+		System.out.println(ItemsOrigin[2].getName());
 		designationType(0);
 	}
 	public static void designationType(final int place){
