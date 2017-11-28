@@ -3,6 +3,12 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.Arrays;
 interface Case{
+	/*try{
+		Case.pl("aaa");
+		answer = Case.YN();
+	}catch(java.util.InputMismatchException e){
+		Case.pl(e);
+	}*/
 	static int YN(){
 		int answer = 0;
 		String[] YN = {"はい","いいえ"};
