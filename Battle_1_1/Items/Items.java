@@ -1,4 +1,5 @@
 package Items;
+import Items.Sword.*;
 public class Items{
 	private static ItemsOrigin[] ItemsOrigin;
 	private static String[][] itemsN = 

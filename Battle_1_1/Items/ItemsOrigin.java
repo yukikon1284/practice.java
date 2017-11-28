@@ -6,7 +6,7 @@ public class ItemsOrigin{
 	private int money;
 	private String description;
 	//ItemsOrigin(名前, {アイテムの種類, アイテムの種類の種類}, 武器の効果, 武器の説明);
-	ItemsOrigin(final String name, final int[] type, final int[] addAbility, final int money, final String description){
+	public ItemsOrigin(final String name, final int[] type, final int[] addAbility, final int money, final String description){
 		this.name = name;
 		this.type = type;
 		this.addAbility = addAbility;
