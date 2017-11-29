@@ -1,2 +1,4 @@
 # practice.java
-aaa
+
+辻へ
+　やることなどはScrapbox参照してください。
