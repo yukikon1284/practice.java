@@ -1,6 +1,5 @@
 package Items.Sword;
-import Items.ItemsOrigin;
-public class WoodSword extends ItemsOrigin{
+public class WoodSword extends Items.ItemsOrigin{
 	public WoodSword(){
 		super("木の剣", new int[] {0,0}, new int[] {10,10,10,10,10,10,10,10}, 10, "");
 	}

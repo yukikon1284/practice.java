@@ -1,7 +1,7 @@
 import Items.Items;
 public class Battle{
 	public static void main(String[] args) {
-		Items Itemss = new Items();
-		Items.items();
+		//Items Items = new Items();
+		Enemys Enemys = new Enemys();
 	}
 }
