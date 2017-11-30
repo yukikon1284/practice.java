@@ -11,16 +11,9 @@ public class Items{
 		,{"能力上昇","状態異常耐性","その他"}};//装飾品
 	Items(){
 		ItemsOrigin = new ItemsOrigin[] {new WoodSword(), new IronSword(), new BronzeSword(), new MagicalIronSword()};
-		seyDesignationType(0);
 		int[] aas = Case.designationNumber(getType(0), 0);
 		for (int i=0; i<aas.length; i++) {
 			System.out.println(ItemsOrigin[aas[i]].getName());
-		}
-	}
-	static void seyDesignationType(final int place){
-		for (int i=0; i<ItemsOrigin.length; i++) {
-			final int[] type = ItemsOrigin[i].getType();
-			if (type[0] == place) System.out.println(itemNames[type[0]][type[1]]);
 		}
 	}
 	static int[] getType(final int place){
