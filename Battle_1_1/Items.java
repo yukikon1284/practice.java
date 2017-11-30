@@ -1,5 +1,7 @@
 import Items.Weapons.OneHandedSwords.*;
 import Items.Weapons.MagicalSwords.*;
+import Items.Weapons.TwinSwords.*;
+import Items.Weapons.JapaneseSwords.*;
 import Items.ItemsOrigin;
 public class Items{
 	private static ItemsOrigin[] ItemsOrigin;
@@ -10,7 +12,7 @@ public class Items{
 		,{"攻撃魔法","回復魔法","特殊魔法"}//魔法
 		,{"能力上昇","状態異常耐性","その他"}};//装飾品
 	Items(){
-		ItemsOrigin = new ItemsOrigin[] {new WoodSword(), new IronSword(), new BronzeSword(), new MagicalIronSword()};
+		ItemsOrigin = new ItemsOrigin[] {new WoodSword(), new IronSword(), new BronzeSword(), new MagicalIronSword(), new WoodTwinSword(), new WoodJapaneseSword()};
 		int[] aas = Case.designationNumber(getType(0), 0);
 		for (int i=0; i<aas.length; i++) {
 			System.out.println(ItemsOrigin[aas[i]].getName());
