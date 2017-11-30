@@ -11,15 +11,18 @@ public class Items{
 		,{"能力上昇","状態異常耐性","その他"}};//装飾品
 	Items(){
 		ItemsOrigin = new ItemsOrigin[] {new WoodSword(), new IronSword(), new BronzeSword(), new MagicalIronSword()};
-		int[] aas = Case.designationNumber(getType(0), 0);
-		for (int i=0; i<aas.length; i++) {
-			System.out.println(ItemsOrigin[aas[i]].getName());
-		}
+		Case.getDesignationName(getAllName(), getAllType(), 0);
 	}
-	static int[] getType(final int place){
+	static int[] getAllType(){
 		final int IOL = ItemsOrigin.length;
 		final int[] type = new int[IOL];
 		for (int i=0; i<IOL; i++) type[i] = ItemsOrigin[i].getType(0);
 		return type;
+	}
+	static String[] getAllName(){
+		final String IOL = ItemsOrigin.length;
+		final String[] name = new int[IOL];
+		for (int i=0; i<IOL; i++) name[i] = ItemsOrigin[i].getName();
+		return name;
 	}
 }

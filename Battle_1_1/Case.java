@@ -68,12 +68,20 @@ interface Case{
 		Arrays.fill(IntArr, setNumber);
 		return IntArr;
 	}
-	public static int[] designationNumber(final int[] originNumber, final int number){
+	public static int[] designationNumber(final int[] originType, final int number){
 		ArrayList<Integer> arrayList = new ArrayList<Integer>();
-		for (int i=0; i<originNumber.length; i++) if (originNumber[i] == number) arrayList.add(i);
+		for (int i=0; i<originType.length; i++) if (originType[i] == number) arrayList.add(i);
 		List<Integer> intList = arrayList;
-		int[] intArr = new int[intList.size()];
-		for (int i=0; i<intArr.length; i++) intArr[i] = intList.get(i);
-		return intArr;
+		int[] designationInt = new int[intList.size()];
+		for (int i=0; i<designationInt.length; i++) designationInt[i] = intList.get(i);
+		return designationInt;
+	}
+	public static static String[] getDesignationName(final String[] names, final int[] originType, final int number){
+		int[] designationInt = designationNumber(originType, number);
+		ArrayList<String> arrayList = new ArrayList<String>();
+		for (int i=0; i<originType.length; i++) arrayList.add(names[designationInt[i]]);
+		List<String> strList = arrayList;
+		String[] designationStr = strList.toArray(new String[strList.size()]);
+		return designationStr;
 	}
 }
