@@ -1,5 +1,5 @@
-import Items.Sword.*;
-import Items.MagicSword.*;
+import Items.Weapons.OneHandedSwords.*;
+import Items.Weapons.MagicalSwords.*;
 import Items.ItemsOrigin;
 public class Items{
 	private static ItemsOrigin[] ItemsOrigin;
