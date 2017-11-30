@@ -3,7 +3,7 @@ import Items.Weapons.MagicalSwords.*;
 import Items.ItemsOrigin;
 public class Items{
 	private static ItemsOrigin[] ItemsOrigin;
-	private static String[][] itemsN = 
+	private static String[][] itemNames = 
 		{{"片手剣","魔法剣","双剣","刀","大剣","槍","杖","魔導銃"}//武器
 		,{"中量防具","軽量防具","重量防具","魔道防具"}//防具
 		,{"回復薬","特殊魔法薬","その他"}//アイテム{HP、MP回復,能力上昇,その他}
@@ -20,7 +20,7 @@ public class Items{
 	static void seyDesignationType(final int place){
 		for (int i=0; i<ItemsOrigin.length; i++) {
 			final int[] type = ItemsOrigin[i].getType();
-			if (type[0] == place) System.out.println(itemsN[type[0]][type[1]]);
+			if (type[0] == place) System.out.println(itemNames[type[0]][type[1]]);
 		}
 	}
 	static int[] getType(final int place){
