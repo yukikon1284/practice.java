@@ -38,7 +38,7 @@ public class ItemsOrigin{
 	public int[] getRestriction(){
 		return this.restriction;
 	}
-	public String getDescription(){
+	public String[] getDescription(){
 		return this.txts;
 	}
 }
