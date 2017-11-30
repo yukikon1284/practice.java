@@ -2,6 +2,8 @@ import java.util.Scanner;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 interface Case{
 	/*try{
 		Case.pl("aaa");
@@ -65,5 +67,13 @@ interface Case{
 		int[] IntArr = new int[number];
 		Arrays.fill(IntArr, setNumber);
 		return IntArr;
+	}
+	public static int[] designationNumber(final int[] originNumber, final int number){
+		ArrayList<Integer> arrayList = new ArrayList<Integer>();
+		for (int i=0; i<originNumber.length; i++) if (originNumber[i] == number) arrayList.add(i);
+		List<Integer> intList = arrayList;
+		int[] intArr = new int[intList.size()];
+		for (int i=0; i<intArr.length; i++) intArr[i] = intList.get(i);
+		return intArr;
 	}
 }
