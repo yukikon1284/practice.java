@@ -76,7 +76,7 @@ interface Case{
 		for (int i=0; i<designationInt.length; i++) designationInt[i] = intList.get(i);
 		return designationInt;
 	}
-	public static static String[] getDesignationName(final String[] names, final int[] originType, final int number){
+	public static String[] getDesignationName(final String[] names, final int[] originType, final int number){
 		int[] designationInt = designationNumber(originType, number);
 		ArrayList<String> arrayList = new ArrayList<String>();
 		for (int i=0; i<originType.length; i++) arrayList.add(names[designationInt[i]]);
