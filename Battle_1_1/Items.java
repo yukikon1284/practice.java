@@ -5,10 +5,10 @@ public class Items{
 	private static ItemsOrigin[] ItemsOrigin;
 	private static String[][] itemsN = 
 		{{"片手剣","魔法剣","双剣","刀","大剣","槍","杖","魔導銃"}//武器
-		,{"中","軽","重","魔"}//防具
-		,{"回復薬","状態異常回復薬","その他"}//アイテム
-		,{"攻撃魔法","回復魔法","状態異常攻撃魔法","状態異常回復魔法"}//魔法
-		,{"能力","状態異常耐性","その他"}};//装飾品
+		,{"中防具","軽防具","重防具","魔防具"}//防具
+		,{"回復薬","特殊魔法薬","その他"}//アイテム{HP、MP回復,能力上昇,その他}
+		,{"攻撃魔法","回復魔法","特殊魔法"}//魔法
+		,{"能力変化","状態異常耐性","その他"}};//装飾品
 	Items(){
 		ItemsOrigin = new ItemsOrigin[] {new WoodSword(), new IronSword(), new BronzeSword(), new MagicalIronSword()};
 		seyDesignationType(0);
