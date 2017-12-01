@@ -9,7 +9,7 @@ public class ItemsOrigin{
 	private int equipmentRestriction; //装備できる個数
 	private int[] restriction; //制限{ダンジョン, 階層}
 	private String[] txts; //{アイテムの説明, アイテムの設定}
-	
+
 	//ItemsOrigin(名前, {アイテムの種類, アイテムの種類の種類}, アイテムの能力, アイテムの属性, アイテムの価値, 装備できるか, 装備できる個数, 制限{ダンジョン, 階層}, {アイテムの説明, アイテムの設定});
 	public ItemsOrigin(final String name, final int[] type, final int[] addAbility, final int attribute, final int money, final Boolean equipment, int equipmentRestriction, final int[] restriction, final String[] txts){
 		this.name = name;
@@ -49,7 +49,7 @@ public class ItemsOrigin{
 	public int[] getRestriction(){
 		return this.restriction;
 	}
-	public String[] getDescription(){
+	public String[] getTxts(){
 		return this.txts;
 	}
 }
