@@ -19,7 +19,7 @@ public class Items{
 		
 		int[] deNu = Case.designationNumber(getAllType(0), 0);
 		for (int i=0; i<deNu.length; i++) {
-			Case.pl(ItemsOrigin[deNu[i]].getName()+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getType())+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getAddAbility())+Case.newLine()+ItemsOrigin[deNu[i]].getAttribute()+Case.newLine()+ItemsOrigin[deNu[i]].getMoney()+Case.newLine()+ItemsOrigin[deNu[i]].getEquipment()+Case.newLine()+ItemsOrigin[deNu[i]].getEquipmentRestriction()+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getRestriction())+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getDescription()));
+			Case.pl(ItemsOrigin[deNu[i]].getName()+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getType())+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getAddAbility())+Case.newLine()+ItemsOrigin[deNu[i]].getAttribute()+Case.newLine()+ItemsOrigin[deNu[i]].getMoney()+Case.newLine()+ItemsOrigin[deNu[i]].getEquipment()+Case.newLine()+ItemsOrigin[deNu[i]].getEquipmentRestriction()+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getRestriction())+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getTxts()));
 		}
 	}
 	static String[] getAllName(){
