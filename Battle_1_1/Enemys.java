@@ -5,7 +5,7 @@ public class Enemys{
 	private static String[] enemySize = {"小","中","大"};
 	Enemys(){
 		EnemysOrigin = new EnemysOrigin[] {new Slime()};
-		String[] name = Case.getDesignationName(getAllName(), getAllType(), 0);
+		String[] name = Case.getDesignationStr(getAllName(), getAllType(), 0);
 		for (int i=0; i<name.length; i++) Case.pl(name[i]);
 	}
 	static int[] getAllType(){

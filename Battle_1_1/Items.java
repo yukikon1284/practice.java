@@ -13,14 +13,13 @@ public class Items{
 		,{"能力上昇","状態異常耐性","その他"}}; //装飾品
 	Items(){
 		ItemsOrigin = new ItemsOrigin[] {new WoodSword(), new IronSword(), new BronzeSword(), new MagicalIronSword(), new WoodTwinSword(), new WoodJapaneseSword()};
-		String[] name = Case.getDesignationName(getAllName(), getAllType(0), 0);
+		String[] name = Case.getDesignationStr(getAllName(), getAllType(0), 0);
 		for (int i=0; i<name.length; i++) Case.pl(name[i]);
-	}
-	static int[] getAllType(int place){
-		final int IOL = ItemsOrigin.length;
-		final int[] type = new int[IOL];
-		for (int i=0; i<IOL; i++) type[i] = ItemsOrigin[i].getType(place);
-		return type;
+		
+		int[] deNu = Case.designationNumber(getAllType(0), 0);
+		for (int i=0; i<deNu.length; i++) {
+			Case.pl(ItemsOrigin[deNu[i]].getName()+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getType())+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getAddAbility())+Case.newLine()+ItemsOrigin[deNu[i]].getAttribute()+Case.newLine()+ItemsOrigin[deNu[i]].getMoney()+Case.newLine()+ItemsOrigin[deNu[i]].getEquipment()+Case.newLine()+ItemsOrigin[deNu[i]].getEquipmentRestriction()+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getRestriction())+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getDescription()));
+		}
 	}
 	static String[] getAllName(){
 		final int IOL = ItemsOrigin.length;
@@ -28,4 +27,52 @@ public class Items{
 		for (int i=0; i<IOL; i++) name[i] = ItemsOrigin[i].getName();
 		return name;
 	}
+	/*static int[][] getAllType(){
+		final int IOL = ItemsOrigin.length;
+		final int[][] type = new int[IOL][];
+		for (int i=0; i<IOL; i++) type[i] = ItemsOrigin[i].getType();
+		return type;
+	}*/
+	static int[] getAllType(int place){
+		final int IOL = ItemsOrigin.length;
+		final int[] type = new int[IOL];
+		for (int i=0; i<IOL; i++) type[i] = ItemsOrigin[i].getType(place);
+		return type;
+	}
+	/*static int[][] getAllAbility(){
+		final int IOL = ItemsOrigin.length;
+		final int[][] ability = new int[IOL][];
+		for (int i=0; i<IOL; i++) ability[i] = ItemsOrigin[i].getAddAbility();
+		return ability;
+	}
+	static int[] getAllAttribute(){
+		final int IOL = ItemsOrigin.length;
+		final int[] attribute = new int[IOL];
+		for (int i=0; i<IOL; i++) attribute[i] = ItemsOrigin[i].getAttribute();
+		return attribute;
+	}
+	static int[] getAllMoney(){
+		final int IOL = ItemsOrigin.length;
+		final int[] money = new int[IOL];
+		for (int i=0; i<IOL; i++) money[i] = ItemsOrigin[i].getMoney();
+		return money;
+	}
+	static int[] getAllEquipment(){
+		final int IOL = ItemsOrigin.length;
+		final int[] equipment = new int[IOL];
+		for (int i=0; i<IOL; i++) equipment[i] = ItemsOrigin[i].getEquipment();
+		return equipment;
+	}
+	static int[] getAllEquipmentRestriction(){
+		final int IOL = ItemsOrigin.length;
+		final int[] equipmentRestriction = new int[IOL];
+		for (int i=0; i<IOL; i++) equipmentRestriction[i] = ItemsOrigin[i].getEquipmentRestriction();
+		return equipmentRestriction;
+	}
+	static int[] getAllRestricrion(){
+		final int IOL = ItemsOrigin.length;
+		final int[] restriction = new int[IOL];
+		for (int i=0; i<IOL; i++) restriction[i] = ItemsOrigin[i].getRestricrion();
+		return restriction;
+	}*/
 }

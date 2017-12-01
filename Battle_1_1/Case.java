@@ -62,26 +62,33 @@ interface Case{
 	public static void p(Object obj){
 		System.out.print(obj);
 	}
+	static String toString(int[] number){
+		return Arrays.toString(number);
+	}
+	static String toString(String[] str){
+		return Arrays.toString(str);
+	}
+	static String newLine(){
+		return System.getProperty("line.separator");
+	}
 	//初期化設定　(配列数, 初期数値)
 	public static int[] setIntArr(int number, int setNumber){
 		int[] IntArr = new int[number];
 		Arrays.fill(IntArr, setNumber);
 		return IntArr;
 	}
-	public static int[] designationNumber(final int[] originType, final int number){
+	public static int[] designationNumber(final int[] originInt, final int number){
 		ArrayList<Integer> arrayList = new ArrayList<Integer>();
-		for (int i=0; i<originType.length; i++) if (originType[i] == number) arrayList.add(i);
+		for (int i=0; i<originInt.length; i++) if (originInt[i] == number) arrayList.add(i);
 		List<Integer> intList = arrayList;
 		int[] designationInt = new int[intList.size()];
 		for (int i=0; i<designationInt.length; i++) designationInt[i] = intList.get(i);
 		return designationInt;
 	}
-	public static String[] getDesignationName(final String[] names, final int[] originType, final int number){
-		int[] designationInt = designationNumber(originType, number);
-		ArrayList<String> arrayList = new ArrayList<String>();
-		for (int i=0; i<originType.length; i++) arrayList.add(names[designationInt[i]]);
-		List<String> strList = arrayList;
-		String[] designationStr = strList.toArray(new String[strList.size()]);
+	public static String[] getDesignationStr(final String[] originStr, final int[] originInt, final int number){
+		int[] designationInt = designationNumber(originInt, number);
+		String[] designationStr = new String[designationInt.length];
+		for (int i=0; i<designationInt.length; i++) designationStr[i] = originStr[designationInt[i]];
 		return designationStr;
 	}
 }
