@@ -7,7 +7,7 @@ public class EnemysOrigin{
 	private int experiencePoint; //敵の経験値
 	private int[] dropItems; //敵の落とすアイテム
 	private int[] dropItemsProbability; //敵の落とすアイテムの確率
-	private String[] txts; //{敵の説明, }
+	private String[] txts; //{敵の説明, 敵の設定}
 	//EnemysOrigin(名前, 敵の種類, 敵のアビリティ, 敵の金, 敵の経験値, 敵の落とすアイテム, 敵の落とすアイテムの確率, 敵の説明);
 	public EnemysOrigin(final String name, final int type, final int[] ability, final int money, final int experiencePoint, final int[] dropItems, final int[] dropItemsProbability, final String[] txts){
 		this.name = name;
@@ -37,8 +37,14 @@ public class EnemysOrigin{
 	public int[] getDropItems(){
 		return this.dropItems;
 	}
+	public int getDropItems(int place){
+		return this.dropItems[place];
+	}
 	public int[] getDropItemsProbability(){
 		return this.dropItemsProbability;
+	}
+	public int getDropItemsProbability(int place){
+		return this.dropItemsProbability[place];
 	}
 	public String[] getTxts(){
 		return this.txts;
