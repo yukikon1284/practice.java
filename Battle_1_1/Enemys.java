@@ -6,15 +6,7 @@ public class Enemys{
 	Enemys(){
 		EnemysOrigin = new EnemysOrigin[] {new Slime()};
 		String[] name = Case.getDesignationName(getAllName(), getAllType(), 0);
-		for (int i=0; i<name.length; i++) {
-			Case.pl(name[i]);
-		}
-	}
-	static void seyDesignationType(final int place){
-		for (int i=0; i<EnemysOrigin.length; i++) {
-			final int type = EnemysOrigin[i].getType();
-			if (type == place) System.out.println(enemySize[type]);
-		}
+		for (int i=0; i<name.length; i++) Case.pl(name[i]);
 	}
 	static int[] getAllType(){
 		final int IOL = EnemysOrigin.length;
