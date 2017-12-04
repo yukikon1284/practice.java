@@ -6,7 +6,7 @@ import Items.Weapons.JapaneseSwords.*;
 import Items.ItemsOrigin;
 public class Items{
 	private static ItemsOrigin[] ItemsOrigin;
-	private static String[][] itemNames = 
+	private static final String[][] itemTypes = 
 		{{"片手剣","魔法剣","双剣","刀","大剣","槍","杖","魔導銃"} //武器
 		,{"中量防具","軽量防具","重量防具","魔道防具"} //防具
 		,{"回復薬","特殊魔法薬","その他"} //アイテム{HP、MP回復,能力上昇,その他}
@@ -14,19 +14,23 @@ public class Items{
 		,{"能力上昇","状態異常耐性","その他"}}; //装飾品
 	Items(){
 		ItemsOrigin = new ItemsOrigin[] {new Empty(), new Hinoki(), new WoodSword(), new BronzeSword(), new IronSword(), new MagicalIronSword(), new WoodTwinSword(), new WoodJapaneseSword()};
-		String[] name = Case.getDesignationStr(getAllName(), getAllType(0), 0);
-		for (int i=0; i<name.length; i++) Case.pl(name[i]);
-		
-		int[] deNu = Case.designationNumber(getAllType(0), 0);
+		// String[] name = CaseOrigin.getDesignationStr(CaseOrigin.getAllName(ItemsOrigin), CaseOrigin.getAllType(ItemsOrigin, 0), 0);
+		// for (int i=0; i<name.length; i++) Case.pl(name[i]);
+
+		for (int i=0; i<ItemsOrigin.length; i++) seyAllStatus(i);
+
+
+		/*int[] deNu = CaseOrigin.designationInt(CaseOrigin.getAllType(ItemsOrigin, 0), 0);
 		for (int i=0; i<deNu.length; i++) {
-			Case.pl(ItemsOrigin[deNu[i]].getName()+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getType())+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getAddAbility())+Case.newLine()+ItemsOrigin[deNu[i]].getAttribute()+Case.newLine()+ItemsOrigin[deNu[i]].getMoney()+Case.newLine()+ItemsOrigin[deNu[i]].getEquipment()+Case.newLine()+ItemsOrigin[deNu[i]].getEquipmentRestriction()+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getRestriction())+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getTxts()));
-		}
+			Case.pl(ItemsOrigin[deNu[i]].getName()+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getType())+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getAbility())+Case.newLine()+ItemsOrigin[deNu[i]].getAttribute()+Case.newLine()+ItemsOrigin[deNu[i]].getMoney()+Case.newLine()+ItemsOrigin[deNu[i]].getEquipment()+Case.newLine()+ItemsOrigin[deNu[i]].getEquipmentRestriction()+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getRestriction())+Case.newLine()+Case.toString(ItemsOrigin[deNu[i]].getTxts()));
+		}*/
+
+		// int[] deIn = CaseOrigin.getDesignationInt(CaseOrigin.designationInt(CaseOrigin.getAllType(ItemsOrigin, 0), 0), CaseOrigin.getAllType(ItemsOrigin, 1), 0);
+		// for (int i=0; i<deIn.length; i++) seyAllStatus(deIn[i]);
 	}
-	static String[] getAllName(){
-		final int IOL = ItemsOrigin.length;
-		final String[] name = new String[IOL];
-		for (int i=0; i<IOL; i++) name[i] = ItemsOrigin[i].getName();
-		return name;
+	private void seyAllStatus(int place){
+		int[] type = ItemsOrigin[place].getType();
+		Case.pl("名前： "+ItemsOrigin[place].getName()+Case.newLine()+"種類： "+itemTypes[type[0]][type[1]]+Case.newLine()+"アビリティ： "+Case.toString(CaseOrigin.ability(ItemsOrigin[place].getAbility()))+Case.newLine()+"属性： "+CaseOrigin.attribute(ItemsOrigin[place].getAttribute())+Case.newLine()+"価値： "+ItemsOrigin[place].getMoney()+Case.newLine()+"装備： "+ItemsOrigin[place].getEquipment()+Case.newLine()+"装備可能個数： "+ItemsOrigin[place].getEquipmentRestriction()+Case.newLine()+"販売制限 [ダンジョン, 階層]： "+Case.toString(ItemsOrigin[place].getRestriction())+Case.newLine()+"情報： "+Case.toString(ItemsOrigin[place].getTxts())+Case.newLine());
 	}
 	/*static int[][] getAllType(){
 		final int IOL = ItemsOrigin.length;
@@ -34,12 +38,6 @@ public class Items{
 		for (int i=0; i<IOL; i++) type[i] = ItemsOrigin[i].getType();
 		return type;
 	}*/
-	static int[] getAllType(int place){
-		final int IOL = ItemsOrigin.length;
-		final int[] type = new int[IOL];
-		for (int i=0; i<IOL; i++) type[i] = ItemsOrigin[i].getType(place);
-		return type;
-	}
 	/*static int[][] getAllAbility(){
 		final int IOL = ItemsOrigin.length;
 		final int[][] ability = new int[IOL][];
