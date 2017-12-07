@@ -7,6 +7,10 @@ import Items.Weapons.LargeSwords.*;
 import Items.Weapons.Spears.*;
 import Items.Weapons.Rods.*;
 import Items.Weapons.MagicGuns.*;
+import Items.Armors.MediumArmors.*;
+import Items.Armors.LightArmors.*;
+import Items.Armors.HeavyArmors.*;
+import Items.Armors.MagicArmors.*;
 import Items.ItemsOrigin;
 public class Items{
 	private static ItemsOrigin[] ItemsOrigin;
@@ -17,7 +21,7 @@ public class Items{
 		,{"攻撃魔法","回復魔法","特殊魔法"} //魔法
 		,{"能力上昇","状態異常耐性","その他"}}; //装飾品
 	Items(){
-		ItemsOrigin = new ItemsOrigin[] {new Empty(), new Hinoki(), new WoodSword(), new BronzeSword(), new IronSword(), new MagicalIronSword(), new WoodTwinSword(), new WoodJapaneseSword(), new WoodLargeSword(), new WoodSpear(), new WoodRod(), new MagicIronGun()};
+		ItemsOrigin = new ItemsOrigin[] {new Empty(), new Hinoki(), new WoodSword(), new BronzeSword(), new IronSword(), new MagicalIronSword(), new WoodTwinSword(), new WoodJapaneseSword(), new WoodLargeSword(), new WoodSpear(), new WoodRod(), new MagicIronGun(), new LeatherArmor(), new LeatherLightArmor(), new LeatherHeavyArmor(), new LeatherMagicArmor()};
 		// String[] name = CaseOrigin.getDesignationStr(CaseOrigin.getAllName(ItemsOrigin), CaseOrigin.getAllType(ItemsOrigin, 0), 0);
 		// for (int i=0; i<name.length; i++) Case.pl(name[i]);
 
