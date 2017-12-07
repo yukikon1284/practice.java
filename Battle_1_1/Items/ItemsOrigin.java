@@ -36,6 +36,9 @@ public class ItemsOrigin implements Origins.OriginsName, Origins.OriginsType{
 	public int[] getAttribute(int place){
 		return this.attribute[place];
 	}
+	public int[][] getAttribute(){
+		return this.attribute;
+	}
 	public int getMoney(){
 		return this.money;
 	}

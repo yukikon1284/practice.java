@@ -30,7 +30,8 @@ public class Items{
 	}
 	private void seyAllStatus(int place){
 		int[] type = ItemsOrigin[place].getType();
-		Case.pl("名前： "+ItemsOrigin[place].getName()+Case.newLine()+"種類： "+itemTypes[type[0]][type[1]]+Case.newLine()+"アビリティ： "+Case.toString(CaseOrigin.ability(ItemsOrigin[place].getAbility()))+Case.newLine()+"属性： "+CaseOrigin.attribute(ItemsOrigin[place].getAttribute())+Case.newLine()+"価値： "+ItemsOrigin[place].getMoney()+Case.newLine()+"装備： "+ItemsOrigin[place].getEquipment()+Case.newLine()+"装備可能個数： "+ItemsOrigin[place].getEquipmentRestriction()+Case.newLine()+"販売制限 [ダンジョン, 階層]： "+Case.toString(ItemsOrigin[place].getRestriction())+Case.newLine()+"情報： "+Case.toString(ItemsOrigin[place].getTxts())+Case.newLine());
+		int[][] attribute = ItemsOrigin[place].getAttribute();
+		Case.pl("名前： "+ItemsOrigin[place].getName()+Case.newLine()+"種類： "+itemTypes[type[0]][type[1]]+Case.newLine()+"アビリティ： "+Case.toString(CaseOrigin.ability(ItemsOrigin[place].getAbility()))+Case.newLine()+"属性： "+CaseOrigin.attribute(attribute[0])+Case.newLine()+"属性耐性： "+CaseOrigin.attribute(attribute[1])+Case.newLine()+"価値： "+ItemsOrigin[place].getMoney()+Case.newLine()+"装備： "+ItemsOrigin[place].getEquipment()+Case.newLine()+"装備可能個数： "+ItemsOrigin[place].getEquipmentRestriction()+Case.newLine()+"販売制限 [ダンジョン, 階層]： "+Case.toString(ItemsOrigin[place].getRestriction())+Case.newLine()+"情報： "+Case.toString(ItemsOrigin[place].getTxts())+Case.newLine());
 	}
 	/*static int[][] getAllType(){
 		final int IOL = ItemsOrigin.length;
