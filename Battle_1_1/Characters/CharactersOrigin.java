@@ -43,10 +43,10 @@ public class CharactersOrigin implements Origins.OriginsName{
 		return this.money;
 	}
 	public int getExperiencePoint(){
-		return this.equipmentRestriction;
+		return this.experiencePoint;
 	}
 	public int[] getItems(){
-		return this.restriction;
+		return this.items;
 	}
 	public int[] getMaterialItems(){
 		return this.materialItems;

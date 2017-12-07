@@ -3,7 +3,7 @@ public class ItemsOrigin implements Origins.OriginsName, Origins.OriginsType{
 	private String name; //名前
 	private int[] type; //{敵のダンジョン,敵の大きさ}{アイテムの種類, アイテムの種類の種類}
 	private int[] ability; //アビリティ
-	private int attribute; //アイテムの属性
+	private int[][] attribute; //アイテムの属性
 	private int money; //金
 	private Boolean equipment; //装備できるか
 	private int equipmentRestriction; //装備できる個数
@@ -33,8 +33,8 @@ public class ItemsOrigin implements Origins.OriginsName, Origins.OriginsType{
 	public int[] getAbility(){
 		return this.ability;
 	}
-	public int getAttribute(){
-		return this.attribute;
+	public int[] getAttribute(int place){
+		return this.attribute[place];
 	}
 	public int getMoney(){
 		return this.money;
