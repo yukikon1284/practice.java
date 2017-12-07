@@ -13,7 +13,7 @@ public class DungeonCharacters{
 	DungeonCharacters(Enemys.EnemysOriginn eO){
 		this.name = eO.getName();
 		this.ability = eO.getAbility();
-		this.operationAbility =
+		this.operationAbility = CaseOrigin.maxOperationAbility(this.ability);
 		this.equipment = eO.equipment();
 	}
 	void resistance();
