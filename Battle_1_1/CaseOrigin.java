@@ -44,11 +44,11 @@ interface CaseOrigin{
 		for (int i=0; i<abilityName.length; i++) abilityStr[i] = abilityName[i]+" "+ability[i]+" ";
 		return abilityStr;
 	}
-	static String attribute(final int attribute){
-		final String[] attributeName = {"無し","毒","猛毒","やけど","燃焼","しびれ","麻痺","睡眠","スロウ"};
-		return attributeName[attribute];
+	static String attribute(final int[] attribute){
+		final String[][] attributeName = {{"無し"},{"毒","猛毒"},{"やけど","燃焼"},{"しびれ","麻痺"},{"睡眠"},{"スロウ"}}; 
+		return attributeName[attribute[0]][attribute[1]];
 	}
-	static int[] maxOperationAbility(int ability){
+	static int[] maxOperationAbility(int[] ability){
 		int[] max = {10,10,1,1,1,1,1};
 		for (int i=0; i<max.length; i++) ability[i] *= max[i];
 		return ability;
@@ -58,8 +58,10 @@ interface CaseOrigin{
 		if (Case.random(avoidAGI)+1 <= avoidAGI - attackAGI) avoid = true;
 		return avoid;
 	}
-	static Boolean resistance(int attackAttribute, int resistance){
-		int[] resistanceIntArr = {0,1,2,3};
-		Boolean resistanceBool
+	//抵抗　できたら　false
+	static Boolean resistance(int resistance){
+		Boolean resist = true;
+		if (Case.random(5) < resistance) resist = false;
+		return resist;
 	}
 }
