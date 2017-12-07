@@ -51,7 +51,7 @@ interface CaseOrigin{
 	static String attributeResistance(final int[] attribute){
 		final String[] attributeResistanceName = {"無し","毒","燃焼","麻痺","睡眠","スロウ"};
 		String resistanceNumber = "";
-		if (attribute[1] != 0) resistanceNumber = "Level"+(attribute[1]+1);
+		if (attribute[0] != 0) resistanceNumber = "Level"+(attribute[1]+1);
 		return attributeResistanceName[attribute[0]]+resistanceNumber;
 	}
 	static int[] maxOperationAbility(int[] ability){

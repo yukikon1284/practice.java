@@ -16,5 +16,6 @@ public class DungeonCharacters{
 		this.operationAbility = CaseOrigin.maxOperationAbility(this.ability);
 		this.equipment = eO.equipment();
 	}
-	void resistance();
+	int[] attack();
+	
 }
