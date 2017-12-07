@@ -1,10 +1,11 @@
-public class DungeonCharacters{
+package Characters;
+public interface DungeonCharacters{
 	/*private String name; //名前
 	private int[] ability; //キャラのアビリティ
 	private int[] operationAbility; //操作用のアビリティ
 	private int[][] equipment; //キャラの装備品 {{0},{0},{0,0,0,0,0},{0,0,0},{0}};*/
 
-	DungeonCharacters(Characters.CharactersOrigin cO){
+	/*DungeonCharacters(Characters.CharactersOrigin cO){
 		this.name = cO.getName();
 		this.ability = cO.getAbility();
 		operationAbility = cO.getOperationAbility;
@@ -15,7 +16,6 @@ public class DungeonCharacters{
 		this.ability = eO.getAbility();
 		this.operationAbility = CaseOrigin.maxOperationAbility(this.ability);
 		this.equipment = eO.equipment();
-	}
-	int[] attack();
-	
+	}*/
+	public int[] attack();
 }

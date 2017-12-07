@@ -1,5 +1,5 @@
 package Characters;
-public class CharactersOrigin implements Origins.OriginsName{
+public class CharactersOrigin implements DungeonCharacters, Origins.OriginsName{
 	private String name; //名前
 	private int[] ability; //キャラのアビリティ
 	private int[] operationAbility; //操作用のアビリティ
@@ -28,6 +28,12 @@ public class CharactersOrigin implements Origins.OriginsName{
 	}
 	public int getAbility(int place){
 		return this.ability[place];
+	}
+	public  void setOperationAbility(){
+		this.operationAbility = Case.maxOperationAbility(this.ability);
+	}
+	public void setOperationAbility(int place, int ability){
+		this.operationAbility[place] += ability;
 	}
 	public int[] getOperationAbility(){
 		return this.operationAbility;
