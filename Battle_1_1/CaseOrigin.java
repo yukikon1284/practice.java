@@ -55,7 +55,7 @@ interface CaseOrigin{
 		String[] attributeResistanceStr = new String[attribute.length];
 		for (int i=0; i<attribute.length; i++) {
 			String resistanceNumber = "";
-			if (attribute[0] != 0) resistanceNumber = "Level"+(attribute[1]+1);
+			if (attribute[i] != 0) resistanceNumber = "Level"+attribute[i];
 			attributeResistanceStr[i] = attributeResistanceName[attribute[i]]+resistanceNumber;
 		}
 		return attributeResistanceStr;
