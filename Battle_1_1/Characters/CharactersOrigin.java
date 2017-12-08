@@ -27,7 +27,18 @@ public class CharactersOrigin implements Characters.DungeonCharacters{
 	public int[] getAbility(final int place){
 		return ability[place];
 	}
-	public int
+	public int[][] getEquipment(final int place){
+		return equipment[place];
+	}
+	public int[] getLME(){
+		return lME;
+	}
+	public int getLME(final int place){
+		return lME[place];
+	}
+	public int[] getItems(int place){
+		return items[place]
+	}
 	/*CharactersOrigin(final String name, final int[] ability, final int[] operationAbility, final int[][] equipment, final int[][] equipmentNumber, final int money, final int experiencePoint, final int[] items, final int[] materialItems){
 		this.name = name;
 		this.ability = ability;
