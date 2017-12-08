@@ -1,5 +1,5 @@
 import Origins.OriginsType;
-import Origins.OriginsName;
+// import Origins.OriginsName;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,18 +20,18 @@ interface CaseOrigin{
 		for (int i=0; i<designationInt.length; i++) designationInt[i] = intList.get(i);
 		return designationInt;
 	}
-	static String[] getDesignationStr(final String[] originStr, final int[] originInt, final int number){
+	/*static String[] getDesignationStr(final String[] originStr, final int[] originInt, final int number){
 		int[] designationInt = designationInt(originInt, number);
 		String[] designationStr = new String[designationInt.length];
 		for (int i=0; i<designationInt.length; i++) designationStr[i] = originStr[designationInt[i]];
 		return designationStr;
-	}
-	static String[] getAllName(final OriginsName[] originsName){
+	}*/
+	/*static String[] getAllName(final OriginsName[] originsName){
 		final int OL = originsName.length;
 		final String[] name = new String[OL];
 		for (int i=0; i<OL; i++) name[i] = originsName[i].getName();
 		return name;
-	}
+	}*/
 	static int[] getAllType(final OriginsType[] originsType, final int place){
 		final int OL = originsType.length;
 		final int[] type = new int[OL];
@@ -44,15 +44,21 @@ interface CaseOrigin{
 		for (int i=0; i<abilityName.length; i++) abilityStr[i] = abilityName[i]+" "+ability[i]+" ";
 		return abilityStr;
 	}
-	static String attribute(final int[] attribute){
+	static String[] attribute(final int[] attribute){
 		final String[][] attributeName = {{"無し"},{"毒","猛毒"},{"やけど","燃焼"},{"しびれ","麻痺"},{"睡眠"},{"スロウ"}}; 
-		return attributeName[attribute[0]][attribute[1]];
+		String[] attributeStr = new String[attribute.length];
+		for (int i=0; i<attribute.length; i++) attributeStr[i] = attributeName[i][attribute[i]];
+		return attributeStr;
 	}
-	static String attributeResistance(final int[] attribute){
+	static String[] attributeResistance(final int[] attribute){
 		final String[] attributeResistanceName = {"無し","毒","燃焼","麻痺","睡眠","スロウ"};
-		String resistanceNumber = "";
-		if (attribute[0] != 0) resistanceNumber = "Level"+(attribute[1]+1);
-		return attributeResistanceName[attribute[0]]+resistanceNumber;
+		String[] attributeResistanceStr = new String[attribute.length];
+		for (int i=0; i<attribute.length; i++) {
+			String resistanceNumber = "";
+			if (attribute[0] != 0) resistanceNumber = "Level"+(attribute[1]+1);
+			attributeResistanceStr[i] = attributeResistanceName[attribute[i]]+resistanceNumber;
+		}
+		return attributeResistanceStr;
 	}
 	static int[] maxOperationAbility(int[] ability){
 		int[] max = {10,10,1,1,1,1,1};
