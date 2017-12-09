@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 interface CaseOrigin{
+	int[] DUNGEON_LEVEL = {1,11,21,31,41,51,61,71,81,91};
 	static int[] designationInt(final int[] originInt, final int number){
 		ArrayList<Integer> arrayList = new ArrayList<Integer>();
 		for (int i=0; i<originInt.length; i++) if (originInt[i] == number) arrayList.add(i);
@@ -64,6 +65,14 @@ interface CaseOrigin{
 		int[] max = {10,10,1,1,1,1,1};
 		for (int i=0; i<max.length; i++) ability[i] *= max[i];
 		return ability;
+	}
+	static int hierarchyPlace(int hierarchy){
+		int i = 0;
+		while (true) {
+			if (hierarchy <= 10*(i+1)+1) break;
+			i++;
+		}
+		return i;
 	}
 	//よけれたら　true
 	static Boolean avoid(final int attackAGI, final int avoidAGI, final Boolean slow){

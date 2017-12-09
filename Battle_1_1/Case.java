@@ -11,7 +11,7 @@ public interface Case{
 	}catch(java.util.InputMismatchException e){
 		Case.pl(e);
 	}*/
-	static int YN(){
+	static int YN() throws java.util.InputMismatchException{
 		int answer = 0;
 		String[] YN = {"はい","いいえ"};
 			for (int i=0; i<YN.length; i++) pl(number(i)+YN[i]);

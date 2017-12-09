@@ -1,5 +1,6 @@
 import Enemys.SmallSizes.*;
 import Enemys.EnemysOrigin;
+import Characters.DungeonCharacters;
 public class Enemys{
 	private static EnemysOrigin[] EnemysOrigin;
 	private static final String[][] enemySize = 
@@ -11,6 +12,8 @@ public class Enemys{
 	Enemys(){
 		EnemysOrigin = new EnemysOrigin[] {new Slime()};
 		for (int i=0; i<EnemysOrigin.length; i++) seyAllStatus(i);
+		int hierarchy = Case.random(99)+1;
+		for (int i=0; i<EnemysOrigin.length; i++) seyAllStatus(i, hierarchy);
 		/*String[] name = CaseOrigin.getDesignationStr(CaseOrigin.getAllName(EnemysOrigin), CaseOrigin.getAllType(EnemysOrigin, 0), 0);
 		for (int i=0; i<name.length; i++) Case.pl(name[i]);*/
 
@@ -31,6 +34,11 @@ public class Enemys{
 		int[][] attribute = EnemysOrigin[place].getAttribute();
 		Case.pl("名前： "+EnemysOrigin[place].getName()+Case.newLine()+"種類： "+enemySize[type[0]][type[1]]+Case.newLine()+"アビリティ固定： "+Case.toString(CaseOrigin.ability(EnemysOrigin[place].getAbility(0)))+Case.newLine()+"アビリティ変動： "+Case.toString(CaseOrigin.ability(EnemysOrigin[place].getAbility(1)))+Case.newLine()+"属性： "+Case.toString(CaseOrigin.attribute(attribute[0]))+Case.newLine()+"属性耐性： "+Case.toString(CaseOrigin.attributeResistance(attribute[1]))+Case.newLine()+"お金： "+EnemysOrigin[place].getME(0)+Case.newLine()+"ドロップ: "+Case.toString(EnemysOrigin[place].getDropItems(0))+Case.newLine()+"ドロップ確率: "+Case.toString(EnemysOrigin[place].getDropItems(1))+Case.newLine()+"情報： "+Case.toString(EnemysOrigin[place].getTxts())+Case.newLine());
 	}
+	private void seyAllStatus(int place, int hierarchy){
+		BattleEnemy bE = new BattleEnemy(EnemysOrigin[place], hierarchy);
+		Case.pl("階層:"+hierarchy+Case.newLine()+"名前："+bE.getName()+Case.newLine()+Case.toString(CaseOrigin.ability(bE.getAbility()))+Case.newLine()+"レベル, お金, 経験値"+Case.toString(bE.getLME())+Case.newLine()+"攻撃"+Case.toString(bE.attack())+Case.newLine());
+	}
+
 	/*static int[] getAllType(){
 		final int IOL = EnemysOrigin.length;
 		final int[] type = new int[IOL];
