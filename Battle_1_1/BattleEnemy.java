@@ -7,7 +7,7 @@ class BattleEnemy implements Characters.DungeonCharacters{
 	BattleEnemy(EnemysOrigin eO, int hierarchy){
 		this.eO = eO;
 		this.lME = setLME(eO.getME(), hierarchy);
-		this.ability = setAbility(eO.getAbility());
+		this.ability = setAbility(eO.getAbility(), hierarchy);
 	}
 	public int[] attack(){
 		return this.eO.attack();
@@ -31,11 +31,12 @@ class BattleEnemy implements Characters.DungeonCharacters{
 	private int calcME(int number, int hierarchy){
 		return (int)(number*((hierarchy/10)+1));
 	}
-	private int[] setAbility(int[][] addAbility){
+	private int[] setAbility(int[][] addAbility, int hierarchy){
 		int[] ability = new int[7];
+		int hierarchyPlaceInt = CaseOrigin.hierarchyPlace(hierarchy);
 		for (int i=0; i<ability.length; i++) {
-			ability[i] = addAbility[0][i];
-			if (Case.random(10-this.addLevel) == 0) ability[i] += Case.random(addAbility[1][i]+1);
+			ability[i] = addAbility[0][i]*hierarchyPlaceInt;
+			if (Case.random(10-this.addLevel) == 0 || hierarchyPlaceInt == 0) ability[i] += Case.random(addAbility[1][i])+1;
 		}
 		return ability;
 	}
