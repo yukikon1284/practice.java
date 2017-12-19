@@ -21,6 +21,11 @@ public class CharactersOrigin implements Characters.DungeonCharacters{
 		this.items = items;
 	}
 
+	public int[] attack(){
+
+		return new int[] {0,0};
+	}
+
 	public String getName(){
 		return this.name;
 	}

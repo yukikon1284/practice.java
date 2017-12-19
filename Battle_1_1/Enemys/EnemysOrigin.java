@@ -10,7 +10,6 @@ public class EnemysOrigin implements Origins.OriginsType, Characters.DungeonChar
 	private int[][] dropItems; //敵の落とすアイテム {{アイテム},{確率}};
 	//private int[] dropItemsProbability; //敵の落とすアイテムの確率
 	private String[] txts; //{説明,設定}
-
 	public EnemysOrigin(final String name, final int[] type, final int[][] ability, final int[][] attribute, final int[] mE, final int[][] dropItems, final String[] txts){
 		this.name = name;
 		this.type = type;

@@ -18,4 +18,6 @@ public interface DungeonCharacters{
 		this.equipment = eO.equipment();
 	}*/
 	public int[] attack();
+	public int[] getAbility(final int place);
+	public String getName();
 }

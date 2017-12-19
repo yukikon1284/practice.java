@@ -14,19 +14,19 @@ import Items.Armors.MagicArmors.*;
 import Items.Tools.RecoveryMedicines.*;
 import Items.ItemsOrigin;
 public class Items{
-	private static ItemsOrigin[] ItemsOrigin;
-	private static final String[][] itemTypes = 
+	private static ItemsOrigin[] iO;
+	public static final String[][] ITEMS_TYPE = 
 		{{"片手剣","魔法剣","双剣","刀","大剣","槍","杖","魔導銃"} //武器
 		,{"中量防具","軽量防具","重量防具","魔道防具"} //防具
 		,{"回復薬","特殊魔法薬","その他"} //アイテム{HP、MP回復、状態異常回復,能力上昇,その他}
 		,{"攻撃魔法","回復魔法","特殊魔法"} //魔法
 		,{"能力上昇","状態異常耐性","その他"}}; //装飾品
 	Items(){
-		ItemsOrigin = new ItemsOrigin[] {new Empty(), new Hinoki(), new WoodSword(), new BronzeSword(), new IronSword(), new MagicalIronSword(), new WoodTwinSword(), new WoodJapaneseSword(), new WoodLargeSword(), new WoodSpear(), new WoodRod(), new MagicIronGun(), new LeatherArmor(), new LeatherLightArmor(), new LeatherHeavyArmor(), new LeatherMagicArmor(), new RecoveryMedicine()};
+		iO = new ItemsOrigin[] {new Empty(), new Hinoki(), new WoodSword(), new BronzeSword(), new IronSword(), new MagicalIronSword(), new WoodTwinSword(), new WoodJapaneseSword(), new WoodLargeSword(), new WoodSpear(), new WoodRod(), new MagicIronGun(), new LeatherArmor(), new LeatherLightArmor(), new LeatherHeavyArmor(), new LeatherMagicArmor(), new RecoveryMedicine()};
 		// String[] name = CaseOrigin.getDesignationStr(CaseOrigin.getAllName(ItemsOrigin), CaseOrigin.getAllType(ItemsOrigin, 0), 0);
 		// for (int i=0; i<name.length; i++) Case.pl(name[i]);
 
-		for (int i=0; i<ItemsOrigin.length; i++) seyAllStatus(i);
+		for (int i=0; i<iO.length; i++) seyAllStatus(i);
 
 
 		/*int[] deNu = CaseOrigin.designationInt(CaseOrigin.getAllType(ItemsOrigin, 0), 0);
@@ -38,9 +38,9 @@ public class Items{
 		// for (int i=0; i<deIn.length; i++) seyAllStatus(deIn[i]);
 	}
 	private void seyAllStatus(int place){
-		int[] type = ItemsOrigin[place].getType();
-		int[][] attribute = ItemsOrigin[place].getAttribute();
-		Case.pl("名前： "+ItemsOrigin[place].getName()+Case.newLine()+"種類： "+itemTypes[type[0]][type[1]]+Case.newLine()+"アビリティ： "+Case.toString(CaseOrigin.ability(ItemsOrigin[place].getAbility()))+Case.newLine()+"属性： "+Case.toString(CaseOrigin.attribute(attribute[0]))+Case.newLine()+"属性耐性： "+Case.toString(CaseOrigin.attributeResistance(attribute[1]))+Case.newLine()+"価値： "+ItemsOrigin[place].getMoney()+Case.newLine()+"装備： "+ItemsOrigin[place].getEquipment()+Case.newLine()+"装備可能個数： "+ItemsOrigin[place].getEquipmentRestriction()+Case.newLine()+"販売制限 [ダンジョン, 階層]： "+Case.toString(ItemsOrigin[place].getRestriction())+Case.newLine()+"情報： "+Case.toString(ItemsOrigin[place].getTxts())+Case.newLine());
+		int[] type = iO[place].getType();
+		int[][] attribute = iO[place].getAttribute();
+		Case.pl("名前： "+iO[place].getName()+Case.newLine()+"種類： "+ITEMS_TYPE[type[0]][type[1]]+Case.newLine()+"アビリティ： "+Case.toString(CaseOrigin.ability(iO[place].getAbility()))+Case.newLine()+"属性： "+Case.toString(CaseOrigin.attribute(attribute[0]))+Case.newLine()+"属性耐性： "+Case.toString(CaseOrigin.attributeResistance(attribute[1]))+Case.newLine()+"価値： "+iO[place].getMoney()+Case.newLine()+"装備： "+iO[place].getEquipment()+Case.newLine()+"装備可能個数： "+iO[place].getEquipmentRestriction()+Case.newLine()+"販売制限 [ダンジョン, 階層]： "+Case.toString(iO[place].getRestriction())+Case.newLine()+"情報： "+Case.toString(iO[place].getTxts())+Case.newLine());
 	}
 	/*static int[][] getAllType(){
 		final int IOL = ItemsOrigin.length;
