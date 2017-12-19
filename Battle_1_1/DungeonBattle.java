@@ -13,8 +13,8 @@ public class DungeonBattle{
 			}
 			//防御(攻撃())
 		}
-		Boolean Win = true;
-		if (i%2 == 0) = false;
-		return Win;
+		Boolean win = true;
+		if (i%2 == 0) win = false;
+		return win;
 	}
 }

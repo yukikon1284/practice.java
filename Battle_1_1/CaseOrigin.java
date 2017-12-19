@@ -74,10 +74,16 @@ interface CaseOrigin{
 		}
 		return i;
 	}
-	//よけれたら　true
+	/*//よけれたら　true
 	static Boolean avoid(final int attackAGI, final int avoidAGI, final Boolean slow){
 		Boolean avoid = false;
 		if (Case.random(avoidAGI)+1 <= avoidAGI - attackAGI) avoid = true;
+		return avoid;
+	}*/
+	static Boolean avoid(final int attackAGI, final int avoidAGI, final Boolean slow){
+		Boolean avoid = false;
+		if (slow && Case.random(avoidAGI) < (int)(avoidAGI*0.5f) - attackAGI) 
+		else if (Case.random(avoidAGI) < avoidAGI - attackAGI) avoid = true;
 		return avoid;
 	}
 	//抵抗　できたら　false
