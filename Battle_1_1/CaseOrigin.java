@@ -46,13 +46,17 @@ interface CaseOrigin{
 		return abilityStr;
 	}
 	static String[] attribute(final int[] attribute){
-		final String[][] attributeName = {{"無し","毒","猛毒"},{"無し","やけど","燃焼"},{"無し","しびれ","麻痺"},{"無し","睡眠"},{"無し","スロウ"}}; 
-		String[] attributeStr = new String[attribute.length];
-		for (int i=0; i<attribute.length; i++) attributeStr[i] = attributeName[i][attribute[i]];
-		return attributeStr;
-	}
-	static String[] attributeResistance(final int[] attribute){
 		final String[] attributeResistanceName = {"無し","毒","燃焼","麻痺","睡眠","スロウ"};
+		String[] attributeResistanceStr = new String[attribute.length];
+		for (int i=0; i<attribute.length; i++) {
+			String resistanceNumber = "";
+			if (attribute[i] != 0) resistanceNumber = "Level"+attribute[i];
+			attributeResistanceStr[i] = attributeResistanceName[attribute[i]]+resistanceNumber;
+		}
+		return attributeResistanceStr;
+	}
+	static String[] attribute(final int[] attribute){
+		final String[] attributeResistanceName = {"無し","STR","DEF","INT","MGR","AGI"};
 		String[] attributeResistanceStr = new String[attribute.length];
 		for (int i=0; i<attribute.length; i++) {
 			String resistanceNumber = "";
