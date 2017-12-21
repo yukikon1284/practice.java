@@ -32,7 +32,7 @@ public class Enemys{
 	private void seyAllStatus(int place){
 		int[] type = EnemysOrigin[place].getType();
 		int[][] attribute = EnemysOrigin[place].getAttribute();
-		Case.pl("名前： "+EnemysOrigin[place].getName()+Case.newLine()+"種類： "+enemySize[type[0]][type[1]]+Case.newLine()+"アビリティ固定： "+Case.toString(CaseOrigin.ability(EnemysOrigin[place].getAbility(0)))+Case.newLine()+"アビリティ変動： "+Case.toString(CaseOrigin.ability(EnemysOrigin[place].getAbility(1)))+Case.newLine()+"属性： "+Case.toString(CaseOrigin.attribute(attribute[0]))+Case.newLine()+"属性耐性： "+Case.toString(CaseOrigin.attributeResistance(attribute[1]))+Case.newLine()+"お金： "+EnemysOrigin[place].getME(0)+Case.newLine()+"ドロップ: "+Case.toString(EnemysOrigin[place].getDropItems(0))+Case.newLine()+"ドロップ確率: "+Case.toString(EnemysOrigin[place].getDropItems(1))+Case.newLine()+"情報： "+Case.toString(EnemysOrigin[place].getTxts())+Case.newLine());
+		Case.pl("名前： "+EnemysOrigin[place].getName()+Case.newLine()+"種類： "+enemySize[type[0]][type[1]]+Case.newLine()+"アビリティ固定： "+Case.toString(CaseOrigin.ability(EnemysOrigin[place].getAbility(0)))+Case.newLine()+"アビリティ変動： "+Case.toString(CaseOrigin.ability(EnemysOrigin[place].getAbility(1)))+Case.newLine()+"属性： "+Case.toString(CaseOrigin.attribute(attribute[0]))+Case.newLine()+"属性耐性： "+Case.toString(CaseOrigin.attribute(attribute[1]))+Case.newLine()+"お金： "+EnemysOrigin[place].getME(0)+Case.newLine()+"ドロップ: "+Case.toString(EnemysOrigin[place].getDropItems(0))+Case.newLine()+"ドロップ確率: "+Case.toString(EnemysOrigin[place].getDropItems(1))+Case.newLine()+"情報： "+Case.toString(EnemysOrigin[place].getTxts())+Case.newLine());
 	}
 	private void seyAllStatus(int place, int hierarchy){
 		BattleEnemy bE = new BattleEnemy(EnemysOrigin[place], hierarchy);

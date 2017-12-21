@@ -1,5 +1,5 @@
 package Enemys;
-public class EnemysOrigin implements Origins.OriginsType, Characters.DungeonCharacters{
+public class EnemysOrigin implements Origins.OriginsType{
 	private String name; //名前
 	private int[] type; //{敵のダンジョン,敵の大きさ}{アイテムの種類, アイテムの種類の種類}
 	private int[][] ability; //アビリティ

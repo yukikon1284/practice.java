@@ -55,7 +55,7 @@ interface CaseOrigin{
 		}
 		return attributeResistanceStr;
 	}
-	static String[] attribute(final int[] attribute){
+	static String[] attributeAbility(final int[] attribute){
 		final String[] attributeResistanceName = {"無し","STR","DEF","INT","MGR","AGI"};
 		String[] attributeResistanceStr = new String[attribute.length];
 		for (int i=0; i<attribute.length; i++) {
