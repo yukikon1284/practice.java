@@ -82,7 +82,7 @@ interface CaseOrigin{
 	}*/
 	static Boolean avoid(final int attackAGI, final int avoidAGI, final Boolean slow){
 		Boolean avoid = false;
-		if (slow && Case.random(avoidAGI) < (int)(avoidAGI*0.5f) - attackAGI) 
+		if (slow && Case.random(avoidAGI) < (int)(avoidAGI*0.5f) - attackAGI) avoid = true;
 		else if (Case.random(avoidAGI) < avoidAGI - attackAGI) avoid = true;
 		return avoid;
 	}
