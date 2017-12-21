@@ -4,10 +4,12 @@ class BattleEnemy implements Characters.DungeonCharacters{
 	private int[] lME;
 	private int addLevel;
 	private int[] ability;
+	private int[] operationAbility;
 	BattleEnemy(EnemysOrigin eO, int hierarchy){
 		this.eO = eO;
 		this.lME = setLME(eO.getME(), hierarchy);
 		this.ability = setAbility(eO.getAbility(), hierarchy);
+		this.operationAbility = ability;
 	}
 	public int[] attack(){
 		return this.eO.attack();
@@ -21,6 +23,9 @@ class BattleEnemy implements Characters.DungeonCharacters{
 	}
 	public int[] getAbility(){
 		return ability;
+	}
+	public int[] getOperationAbility(){
+		return operationAbility;
 	}
 
 

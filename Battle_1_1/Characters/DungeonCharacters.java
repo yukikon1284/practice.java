@@ -19,5 +19,6 @@ public interface DungeonCharacters{
 	}*/
 	public int[] attack();
 	public int[] getAbility();
+	public int[] getOperationAbility();
 	public String getName();
 }

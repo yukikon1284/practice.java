@@ -28,6 +28,8 @@ public class Enemys{
 		for (int i=0; i<deNu.length; i++) {
 			Case.pl(EnemysOrigin[deNu[i]].getName()+Case.newLine()+Case.toString(EnemysOrigin[deNu[i]].getType())+Case.newLine()+Case.toString(EnemysOrigin[deNu[i]].getAbility())+Case.newLine()+EnemysOrigin[deNu[i]].getMoney()+Case.newLine()+EnemysOrigin[deNu[i]].getExperiencePoint()+Case.newLine()+Case.toString(EnemysOrigin[deNu[i]].getDropItems())+Case.newLine()+Case.toString(EnemysOrigin[deNu[i]].getDropItemsProbability())+Case.newLine()+Case.toString(EnemysOrigin[deNu[i]].getTxts()));
 		}*/
+		DungeonBattle db = new DungeonBattle(new DungeonCharacters[] {new BattleEnemy(EnemysOrigin[0], 10), new BattleEnemy(EnemysOrigin[0], 10)});
+		db.dungeonBattle();
 	}
 	private void seyAllStatus(int place){
 		int[] type = EnemysOrigin[place].getType();
