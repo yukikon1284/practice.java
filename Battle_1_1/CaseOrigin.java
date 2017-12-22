@@ -90,6 +90,11 @@ interface CaseOrigin{
 		else if (Case.random(avoidAGI) < avoidAGI - attackAGI) avoid = true;
 		return avoid;
 	}
+	static Boolean randomBoolean(final int random, final int number){
+		Boolean bool = true;
+		if (Case.random(random) < number) bool = false;
+		return bool;
+	}
 	//抵抗　できたら　false
 	static Boolean resistance(int resistance){
 		Boolean resist = true;
