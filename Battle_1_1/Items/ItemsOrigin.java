@@ -1,7 +1,7 @@
 package Items;
 public class ItemsOrigin implements Origins.OriginsType{
 	private String name; //名前
-	private int[] type; //{敵のダンジョン,敵の大きさ}{アイテムの種類, アイテムの種類の種類}
+	private int[] type; //{敵のダンジョン,敵の大きさ}{アイテムの種類, アイテムの種類の種類, アイテムの効果}
 	private int[] ability; //アビリティ
 	private int[][] attribute; //アイテムの属性
 	private int money; //金
