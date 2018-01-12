@@ -75,8 +75,13 @@ class BattleCharacter{
 		for (i=0; i<attackifStr.length; i++) Case.pl(Case.number(i)+attackifStr[i]);
 		return i;
 	}
-	int attackDamage(){
-
+	int attackDamage(int[] place){
+		if (place[0] == 0) {
+			//物理　計算
+			//place[1] = 結果
+		}else {
+			//Items[place[1]].getType
+		}
 		return ;
 	}
 	public void defense(){
