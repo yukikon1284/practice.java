@@ -15,7 +15,7 @@ public class UtilTool {
 	}
 	public static int scanI(int limit) throws java.util.InputMismatchException{
 		int answer = scanI();
-		if (answer < 0 || answer > limit) throw new java.util.InputMismatchException(CORRECT);
+		if (answer < 0 || answer >= limit) throw new java.util.InputMismatchException(CORRECT);
 		return answer;
 	}
 	public static int random(int number){

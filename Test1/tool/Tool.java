@@ -29,7 +29,7 @@ public class Tool {
 		return System.getProperty("line.separator");
 	}
 	public static String number(int i){
-		return UtilTool.DIRECTION+(i+1)+" ";
+		return UtilTool.DIRECTION+i+" ";
 	}
 	//初期化設定　(配列数, 初期数値)
 	public static int[] setIntArr(int number, int setNumber){
