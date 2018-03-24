@@ -7,7 +7,7 @@ import tool.UtilTool;
 public class BattleCharacter {
 	private Status status;
 	private String name;
-	private StatusAilment[][] ailment;
+	protected StatusAilment[][] ailment;
 	BattleCharacter(final int[] status, final String name){
 		this.status = new Status(status);
 		this.name = name;
@@ -88,5 +88,8 @@ public class BattleCharacter {
 			if (sayStatus.getStatusAilment(0) > 0) sayStr += sayStatus.getStatusAilmentName()+" ";
 		}
 		if (sayStr.equals("") == false) Tool.pl(sayStr);
+	}
+	public void sayStatusAilmentName(){
+		for (int i=0; i<this.ailment.length; i++) sayStatusAilmentName(i);
 	}
 }

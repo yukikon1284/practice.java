@@ -1,5 +1,6 @@
 package status;
 import status.Status;
+import tool.Tool;
 public abstract class StatusAilment {
 	private String[] statusAilmentName;
 	protected int[] statusAilment = new int[3];//強さ　長さ　データ
@@ -17,8 +18,10 @@ public abstract class StatusAilment {
 		for (int i=0; i<statusAilment.length; i++) this.statusAilment[i] = 0;
 	}
 	public final void setAilment(int power){
-		this.statusAilment[0] = power;
-		this.statusAilment[1] = setAilmentLength(power);
+		if (this.statusAilment[0] == 0) {
+			this.statusAilment[0] = power;
+			this.statusAilment[1] = setAilmentLength(power);
+		}else Tool.pl("効果がない。");
 	}
 	protected abstract void setAilment(Status status);
 	private final int setAilmentLength(int power){//長さ

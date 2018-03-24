@@ -7,12 +7,15 @@ class Battle {
 	public void battle(){
 		int i=0;
 		while(this.bc[i%2].getStatus(0)>0 && this.bc[(i+1)%2].getStatus(0)>0){
-			Tool.pl("============================="+Tool.newLine()+(i+1)+"ターン目"+Tool.newLine()+this.bc[i%2].getName());
-			sayStatus(i%2);
-			this.bc[i%2].sayStatusAilmentName(1);
-			
+			Tool.pl("============================="+Tool.newLine()+(i+1)+"ターン目");
+
 			//状態異常の効果を発動 dbuff
 			this.bc[i%2].statusAilment();
+			
+			Tool.pl(this.bc[i%2].getName());
+			sayStatus(i%2);
+			this.bc[i%2].sayStatusAilmentName();
+			
 
 			if (this.bc[i%2].getStatus(0)>0 && this.bc[(i+1)%2].getStatus(0)>0) this.bc[(i+1)%2].defense(this.bc[i%2].attack(), (int)this.bc[i%2].getStatus(6));
 

@@ -18,10 +18,10 @@ public class Status {
 		return this.status[number];
 	}
 	public int[] getStatusArr(){
-		return this.status[0];
+		return getStatusArr(0);
 	}
 	public int[] getStatusMaxArr(){
-		return this.status[1];
+		return getStatusArr(1);
 	}
 	public void addStatus(int number, int addNumber){
 		getStatusArr()[number] += addNumber;
